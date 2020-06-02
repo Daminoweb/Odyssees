@@ -1,0 +1,13 @@
+Sitemap: http://www.odyssees-editions.fr/sitemap.xml
+Allow: /sitemap.xml
+
+
+User-agent: *
+Disallow: /css/
+Disallow: /js/
+
+User-agent: Googlebot
+Allow: /css/
+Allow: /js/
+Allow: /images/
+Allow: /video/

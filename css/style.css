@@ -1,0 +1,452 @@
+/*
+* @author : Damien Gayrard aka daminoweb
+* @author url : damiengayrard.free.fr
+* @url : www.atelierscales.net
+* @version : 1.1
+* @date : 27/10/2015
+*/
+
+
+/* switching box model for all elements */
+* {
+	-moz-box-sizing: border-box;
+	     -webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+html {
+	/* set base font-size to equiv "10px", which is adapted to rem unit */
+	font-size: 62.5%;
+	/* IE9-IE11 math fixing. See http://bit.ly/1g4X0bX */
+	/* thanks to @guardian, @victorbritopro and @eQRoeil */
+	font-size: -webkit-calc(1em * 0.625);
+	font-size: -moz-calc(1em * 0.625);
+	font-size: calc(1em * 0.625);
+	/* disallow text zooming on orientation change (non standard property) */
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	height:100%;
+}
+body {
+	/* set body font-size in em (1.4em equiv "14px") */
+	font-size: 1.4em;
+	background: #fff url("../images/css/tweed_@2X.png") repeat fixed;
+	color: #000;
+	font-family: Helvetica, Arial, sans-serif;
+	line-height: 1.4em;
+	height: auto !important;
+	height: 100%;
+	min-height: 100%;
+	
+}
+
+html, body, h1, h2, ul, li, p, section, article, cite,figure {
+	margin: 0;
+	padding: 0;
+	position:relative;
+}
+img {
+	border: 0;
+	max-width:100%;
+	height: auto; /*pour conserver le ratio, même si un attribut height est précisé dans le code HTML*/
+	width: auto ; /*pour corriger un bug sur IE8 (eh oui, ils sont partout !)*/
+}
+h1, h2 {
+	text-align: center;
+	font-family: "trebuchet ms","sans-serif";
+	margin: 0 auto; /*pour center les h2 avec border-bottom à largeur*/
+    text-shadow: 0 0 3px #fff;
+}
+p, cite {
+	line-height: 1.7em;
+}
+a {
+	color:#eee;
+	text-decoration: none;
+}
+a:hover, .active {
+	color:#1e689e;
+}
+
+/*audio,
+canvas,
+video {
+	  display: inline-block;
+}
+
+svg:not(:root) {
+	  overflow: hidden;
+}*/
+
+/*------------------*/
+/*		GENERAL		*/
+/*------------------*/
+
+header, section, footer, article, nav, figure, video {
+	display: block;
+}
+
+header, section, footer {
+	width: 100%;
+	margin:0;
+	padding:0;
+	clear:both;
+	color:#eee;
+}
+
+/***clearfix***/
+.clearfix:before,
+.clearfix:after
+{
+	content: " ";
+	display: table;
+	line-height: 0;
+}
+.clearfix:after, .clear {
+	clear: both;
+}
+.ie67 .clearfix {
+	zoom:1;
+}
+/***clearfix***/
+
+.left {
+	float:left;
+	margin-right: 1.4em;
+}
+.right {
+	float:right;
+	margin-left: 1.4em;
+}
+.center {
+	text-align: center;
+}
+.ilb {
+	display: inline-block;
+	vertical-align: middle;
+}
+.ie67 .ilb {
+	zoom:1;
+	display: inline;
+}
+.wrap {
+	width:80%;
+	margin:0 auto;
+	max-width: 1200px;
+}
+section, article {
+	height: auto;
+	overflow: hidden;
+	color:#000;
+}
+section+section {
+	padding: 4em 0;
+}
+section+section h2 {
+	margin-bottom: 1.4em;
+	padding-bottom: 1em;
+	border-bottom: 2px solid #7a7878;
+	width: 50%;
+}
+
+section ul {
+	padding-left: 2em;
+}
+article+article {
+	padding-top:1.4em;
+}
+
+section a {
+	color:#7b7979;
+	font-weight: bold;
+}
+section a[href$=".pdf"] {
+	padding: 0 20px 0 0;
+	background: transparent url("../images/css/icon_pdf.gif") no-repeat center right;
+}
+section a[title="facebook"] {
+	padding: 1px 18px 1px 0;
+	background: transparent url("../images/css/icon_fb.png") no-repeat center right;
+}
+section a:hover {
+	background: #eee;
+}
+
+
+/*------------------*/
+/*		HEADER		*/
+/*------------------*/
+
+header {
+	position: fixed;
+	top:0;
+	left:0;
+	background: #000;
+	-webkit-box-shadow: 0 1px 10px 1px black;
+	        box-shadow: 0 1px 10px 1px black; 
+	z-index:1000;
+	font-weight: bold;
+	/*display: none;*/
+}
+.logo {
+	background: url("../images/css/wave.png") no-repeat left 40%;
+	float:left;
+	color:#eee;
+	padding: 1.4em 0 1.4em 51px;
+}
+nav {
+	float:right;
+	padding: 1.4em 0;
+}
+nav li {
+	float: left;
+	list-style: none;
+}
+nav li+li {
+	margin-left: 1.4em;
+}
+nav > a {
+	display: none;/*cache le menu responive*/
+	text-align: right;
+}
+
+/*-----------------------*/
+/*		SECTION INTRO	 */
+/*-----------------------*/
+
+.livre {
+	background: url("../images/css/salin-1.jpg") no-repeat, url("../images/css/salin-1-mini.jpg") no-repeat;
+}
+.auteur {
+	background: url("../images/css/salin-2.jpg") no-repeat, url("../images/css/salin-2-mini.jpg") no-repeat;
+}
+.rencontres {
+	background: url("../images/css/salin-3.jpg") no-repeat, url("../images/css/salin-3-mini.jpg") no-repeat;
+}
+.photos {
+	background: url("../images/css/salin-4.jpg") no-repeat, url("../images/css/salin-4-mini.jpg") no-repeat;
+}
+.intro {
+	min-height: 500px;
+	background-position: center 4.1em;
+	background-attachment: fixed;
+	margin-top: 4.1em;
+}
+
+h1 {
+	font-size: 4em;
+	line-height: 1em;
+	padding: .7em 0 .3em 0;
+}
+.intro h2 {
+	font-size: 2em;
+	font-style: italic;
+}
+
+/*------------------*/
+/*		SECTION 1	*/
+/*------------------*/
+
+.first {
+	background: url("../images/css/bedge_grunge.png") repeat;	
+}
+
+/*------------------*/
+/*		SECTION 2	*/
+/*------------------*/
+
+.second {
+	background: url("../images/css/tweed.png") repeat;
+	padding-bottom: 7.8em; /*1.4x3 du footer + 1.4 de padding*/
+}
+
+/*------------------*/
+/*		FOOTER		*/
+/*------------------*/
+
+footer {
+	position: absolute;
+	bottom:0;
+	left:0;
+	background: #000;
+	z-index:1000;
+	padding: 1.4em 0;
+	text-align: center;
+}
+.footer-fb {
+    position:absolute;
+    left:0;
+    margin-left:10%;
+}
+
+/*------------------*/
+/*		DIVERS		*/
+/*------------------*/
+
+/***VIDEO***/
+.contient {
+	display: block;
+	width: 50%;
+	min-width: 350px;
+}
+.videocontainer {
+	width: 100%;
+	height: 0;
+	padding-bottom: 56.2%;
+	overflow: hidden;
+	position: relative;
+}
+.videocontainer iframe {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top:0;
+	left: 0;
+}
+video {
+	 max-width: 100%;
+	 height: auto;
+    border: 1px solid red;
+    outline: none;
+	}
+
+/***DIVERS**/
+
+.textleft{
+	padding: 0 0 0 1.4em;
+	text-align: left;
+	width:63%;
+}
+
+/***VIGNETTES***/
+figure {
+	display: inline-block;
+}
+.ie67 figure {
+	zoom: 1; /*offre le layout à un élément*/
+	display: inline;
+	
+}
+figcaption{
+	position:absolute;
+	top:30%;
+	left:0;
+	padding: 1em 0;
+	text-align: center;
+	font-weight: bold;
+	width: 100%;
+    opacity: 0;
+}
+figcaption span {
+	font-style:italic;
+	font-size: .9em;
+	font-weight: normal;
+}
+.ie67 figcaption {
+	background: #7a7878;/*pour opacity IE*/
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+}
+figure:hover figcaption {
+    background: #2F5A84;
+	background: rgba(30,105,158,0.8);
+	opacity: 1;
+	-webkit-transition:all .7s ease;
+            -moz-transition:all .7s ease;
+	           transition:all .7s ease;
+}
+.ie67 figure:hover figcaption {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
+}
+
+/*==================*/
+/*		MOBILE		*/
+/*==================*/
+
+@media only screen and (max-width: 720px) {
+
+body {
+	margin-top:2.4em;
+}
+
+.left, .right {
+	float: none;
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 1.4em;
+}
+.wrap {
+	width: 95%;
+}
+footer, nav {
+    padding: .5em; 
+    }
+.logo {
+    padding-top:.5em;
+    padding-bottom: .5em;
+}
+nav {
+	float:none;/*pour remettre dans le flux et pouvoir dimensionner sur 100% le menu*/
+}
+
+nav ul{
+	display: none;
+	clear:both;
+ }
+nav ul.show {
+	display: block;
+}
+nav a {
+	display: block;
+	width:100%;
+}
+.show li {
+	float:none;
+	border-top:1px solid;
+	margin: 0;
+	}
+.show a {
+	padding: 1em 0;
+	text-transform:uppercase;
+	text-align: center;
+}
+.show a:hover{
+	background-color: #7a7878;
+	color:#000;
+}
+section.intro {
+	background-position: center 0;
+	background-attachment: scroll;
+	margin-top: 0;
+}
+.intro h1 {
+	padding-top: .4em;
+}
+.intro h2 {
+	padding-bottom: 2em;
+}
+section+section {
+    padding: 1em 0;
+}
+section+section h2 {
+    width: 80%;
+}
+section.second {
+    padding-bottom: 5.3em;
+}
+footer a {
+	display: block;
+}
+.footer-fb {
+    position:relative;
+    display: inline-block;
+    margin-left:0;     
+}  
+iframe {
+	width: 150px;
+}  
+.textleft {
+	width: 100%;
+	padding: 1.4em 0 0;
+}
+}
